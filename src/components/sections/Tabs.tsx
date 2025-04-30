@@ -5,10 +5,9 @@ export default function Services() {
 
     const features = [
         {
-            icon: <Globe className="h-16 w-16" />,
             title: 'Agikuyu',
             description: 'Central highland farmers, entrepreneurs, resilient culture',
-          
+            backgroundImage: "url('src/assets/Kikuyu.jpg')",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground"> Learn about Kenya's largest ethnic group</p>
