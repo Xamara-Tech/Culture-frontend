@@ -30,7 +30,7 @@ export default function ProjectCard({
         <img
             src={imageUrl}
             alt={`${title} preview`}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-"
         />
       </div>
       <CardContent className="p-4 sm:p-5 text-center">

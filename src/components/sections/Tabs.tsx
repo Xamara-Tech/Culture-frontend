@@ -1,4 +1,4 @@
-import { Globe, Smartphone, ChartLine } from 'lucide-react';
+
 import {Card} from '@/components/ui/rotate-card';
 
 export default function Services() {
@@ -6,8 +6,8 @@ export default function Services() {
     const features = [
         {
             title: 'Agikuyu',
-            description: 'Central highland farmers, entrepreneurs, resilient culture',
-            backgroundImage: "url('src/assets/Kikuyu.jpg')",
+           
+            imageUrl: "src/assets/Agikuyu1.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground"> Learn about Kenya's largest ethnic group</p>
@@ -17,10 +17,10 @@ export default function Services() {
             )
         },
         {
-            icon: <Globe className="h-16 w-16" />,
-            title: 'Meru',
-            description: ' Eastern Mount Kenya, unity-driven community',
           
+            title: 'Meru',
+           
+            imageUrl: "src/assets/Ameru.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground">Discover the Njuri Ncheke council</p>
@@ -32,10 +32,10 @@ export default function Services() {
             )
         },
         {
-            icon: <Globe className="h-16 w-16" />,
+            
             title: 'Luhya',
-            description: 'Western Kenya, vibrant music, unity',
-          
+            
+            imageUrl: "src/assets/Luhya1.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground"> Explore their rich oral traditions</p>
@@ -45,10 +45,10 @@ export default function Services() {
             )
         },
         {
-            icon: <Smartphone className="h-16 w-16" />,
+           
             title: 'Mijikenda',
-            description: 'Coastal Nine Tribes, sacred kaya',
-         
+           
+            imageUrl: "src/assets/Mijikenda1.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground">Understand their kaya forests.</p>
@@ -58,10 +58,10 @@ export default function Services() {
             )
         },
         {
-            icon: <ChartLine className="h-16 w-16" />,
+            
             title: 'Taita',
-            description: 'Hillside dwellers, livestock, spiritual traditions',
-           
+            
+            imageUrl: "src/assets/Taita.jpg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground"> Learn about their intricate clan roles</p>
@@ -71,10 +71,9 @@ export default function Services() {
             )
         },
         {
-            icon: <Globe className="h-16 w-16" />,
-            title: 'Somali',
-            description: ' Nomadic traders, Islamic, northeastern heritage',
           
+            title: 'Somali',
+            imageUrl: "src/assets/Somali1.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground">Discover how they blend Islamic traditions with pastoral life</p>
@@ -84,10 +83,10 @@ export default function Services() {
             )
         },
         {
-            icon: <Globe className="h-16 w-16" />,
+            
             title: 'Kalenjin',
-            description: 'Highland athletes, pastoralists, age sets',
-          
+           
+            imageUrl: "src/assets/Kalenjin.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground">Famous for producing world-class runners</p>
@@ -99,10 +98,10 @@ export default function Services() {
             )
         },
         {
-            icon: <Globe className="h-16 w-16" />,
-            title: 'Luo',
-            description: 'Lakeside Nilotes, fishing, intellectual tradition',
           
+            title: 'Luo',
+           
+            imageUrl: "src/assets/Luo1.jpeg",
             rotateInfo: (
                 <>
                     <p className="text-sm text-muted-foreground">Known for their love of education,</p>
@@ -115,8 +114,8 @@ export default function Services() {
 
     return(
         <>
-            {/* Services Section */}
-            <section id="service" className="px-6 py-19 md:px-12 bg-sky-100">
+            {/* Tabs Section */}
+            <section id="tabs" className="px-6 py-19 md:px-12 ">
                 <div className="mx-auto max-w-7xl">
                     <h2 className="mb-20 text-center text-3xl font-bold md:text-4xl">Major Kenyan Tribes</h2>
                     <div className="grid gap-8 md:grid-cols-4">
@@ -130,10 +129,17 @@ export default function Services() {
                             </div>
                         }
                         >
-                        <div className="h-full flex flex-col justify-center items-left text-left bg-white/10 p-6 rounded-lg">
-                            <div className="flex">{feature.icon}</div>
-                            <h3 className="text-2xl font-bold mt-4">{feature.title}</h3>
-                            <p className="text-gray-500 text-lg mt-2 px-1">{feature.description}</p>
+                        <div
+                            className="h-full flex flex-col justify-center items-left text-left bg-white/10 p-6 rounded-lg"
+                            style={{
+                                backgroundImage: `url(${feature.imageUrl})`,
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                            }}
+                        >
+                           <div className="relative h-full flex flex-col justify-end items-start text-left bg-cover bg-center p-6 rounded-lg">
+  <h3 className="absolute bottom-0 left-0 text-white text-2xl font-bold m-4">{feature.title}</h3>
+</div>
                             
                         </div>
                         </Card>
