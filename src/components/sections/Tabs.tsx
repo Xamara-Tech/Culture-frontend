@@ -1,7 +1,7 @@
 
 import {Card} from '@/components/ui/rotate-card';
 
-export default function Services() {
+export default function Services({title}: {title?: string}) {
 
     const features = [
         {
@@ -117,7 +117,7 @@ export default function Services() {
             {/* Tabs Section */}
             <section id="tabs" className="px-6 py-19 md:px-12 ">
                 <div className="mx-auto max-w-7xl">
-                    <h2 className="mb-20 text-center text-3xl font-bold md:text-4xl">Major Kenyan Tribes</h2>
+                    <h2 className="mb-20 text-center text-3xl font-bold md:text-4xl">{title}</h2>
                     <div className="grid gap-8 md:grid-cols-4">
                     {features.map((feature, index) => (
                         <Card
