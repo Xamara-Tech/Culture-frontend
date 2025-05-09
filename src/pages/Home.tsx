@@ -1,5 +1,5 @@
 
-import Footer from "@/components/sections/Footer";
+import AboutSection from "@/components/sections/AboutSection";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Tabs";
 
@@ -11,7 +11,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <Services title="Major Kenyan tribes"/>
-        <Footer />
+        <AboutSection />
       </main>
      
     </div>
