@@ -58,7 +58,7 @@ export default function Services() {
     return(
         <>
             {/* Tabs Section */}
-            <section id="tabs" className="px-6 py-19 md:px-12 ">
+            <section id="tabs" className="px-6 py-6 md:px-12 ">
   <div className="mx-auto max-w-7xl">
     <h2 className="mb-20 text-center text-3xl font-bold md:text-4xl">Major Kenyan Tribes</h2>
     <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
