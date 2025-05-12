@@ -85,7 +85,8 @@ export default function Services() {
         </Card>
       ))}
     </div>
-  </div>
+    
+      </div>
 </section>
         </>
     );
