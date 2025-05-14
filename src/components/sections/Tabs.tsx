@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card } from '../ui/card';
 export default function Services() {
     const navigate = useNavigate();
-
+//details that will be on the tab
     const features = [
         {
             title: 'Agikuyu',
