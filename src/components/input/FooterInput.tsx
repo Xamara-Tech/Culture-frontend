@@ -8,7 +8,7 @@ const FooterInput = ({className, ...props}: FooterInputProps) => {
     return (
         <Input
         {...props}
-        className={`bg-white text-gray-500 placeholder-gray-400 rounded-none rounded-l-[2vw] px-4 py-2 focus:outline-none border-none ${className || ''}`}
+            className={`flex-grow px-3 py-2 text-white rounded-l-md bg-grey-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-600${className || ''}`}
         />
     );
 };
