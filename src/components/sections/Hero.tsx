@@ -9,16 +9,16 @@ const Hero = () => {
     >
 
       <div className="container mx-auto px-4 text-center">
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-lg">
+        <div className="bg-black/40 backdrop-blur-md p-8 rounded-lg max-w-lg">
           <h1 className="text-4xl font-extrabold mb-4"   style={{
             color: "#FFFFFF",
-            fontFamily: "Roboto, sans-serif", // Updated font
+            fontFamily: "Merriweather, Playfair Display", 
           }}>
             Discover Kenya's Rich Cultural Heritage
           </h1>
           <p  className="text-[15px] mb-6 max-w-lg mx-auto text-center"  style={{
             color: "#FFFFFF",
-            fontFamily: "Roboto, sans-serif", // Updated font
+            fontFamily: "Merriweather, PLayfair Display", 
             fontWeight: "400",
           }}>
               Explore the diverse traditions, customs, and stories of Kenya's vibrant ethnic communities.
@@ -30,7 +30,7 @@ const Hero = () => {
           <h2
             className="text-[18px] font-semibold mb-4"
             style={{
-              fontFamily: "Roboto, sans-serif", // Updated font
+              fontFamily: "Merriweather, Playfair Display", 
               color: "#333333",
             }}
           >
