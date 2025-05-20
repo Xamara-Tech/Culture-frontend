@@ -18,7 +18,7 @@ export default function Services() {
   return (
     <section
       id="tabs"
-      className="md:px-12 bg-[url('/public/tribal4.jpg')] bg-repeat bg-center bg-cover py-12 px-6"
+      className="md:px-12 bg-[url('/tribal4.jpg')] bg-repeat bg-center bg-cover py-12 px-6"
     >
       <div className="mx-auto max-w-7xl ">
         <h2
