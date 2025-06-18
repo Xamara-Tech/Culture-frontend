@@ -2,8 +2,6 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api/auth';
 import { storeToken } from '../services/authService';
-import './css/Login.css'; // Import the CSS file
-
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -16,41 +14,97 @@ const Login: React.FC = () => {
 
     try {
       const data = await loginUser(email, password);
-      storeToken(data.access, data.refresh); // Assuming your backend returns { token: "..." }
+      storeToken(data.access, data.refresh);
       alert('Login successful');
-      window.location.href = '/home'; // Redirect to home page or dashboard
-      // redirect or update UI here
+      window.location.href = '/home';
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed');
     }
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Login</h2>
-      <form onSubmit={handleLogin} className="login-form">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-          className="login-input"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          className="login-input"
-        />
-        {error && <p className="login-error">{error}</p>}
-        <button type="submit" className="login-button">
-          Login
-        </button>
-      </form>
-      <p className="signup-prompt">
-    Don't have an account? <a href="/signup" className="signup-link">Sign up here</a>
-  </p>
+    <div className="min-h-screen flex items-center justify-center bg-orange-500 ">
+      <div className="h-full max-w-4xl bg-white shadow-md rounded-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
+        
+        {/* Left Side (Orange Background) */}
+        <div className="hidden md:flex flex-col items-center justify-center bg-orange-300 p-8">
+          <img src="src/assets/Rectangle 17.png" alt="" className="mb-6 mx-auto" />
+          <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">Welcome to Culture Ai</h2>
+          <p className="text-center text-gray-700">
+            Ask anything about Kenyan tribes. Instantly understand and explore their rich culture.
+          </p>
+        </div>
+
+        {/* Right Side (Form) */}
+        <div className="p-8 flex flex-col justify-center">
+          {/* State manager for active tab */}
+          {(() => {
+            const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login');
+            return (
+              <div className="flex justify-start mb-6">
+            <button
+            type="button"
+            onClick={() => {
+              setActiveTab('login');
+              window.location.href = '/';
+            }}
+            className={`text-2xl font-semibold mr-4 pb-1 border-b-2 ${
+              activeTab === 'login'
+              ? 'text-gray-800 border-orange-500'
+              : 'text-gray-500 border-transparent hover:text-orange-500 hover:border-orange-500 transition'
+            }`}
+            >
+            Login
+            </button>
+          <button
+            type="button"
+            onClick={() => {
+              setActiveTab('signup');
+              window.location.href = '/signup';
+            }}
+            className={`text-2xl font-semibold ml-4 pb-1 border-b-2 ${
+              activeTab === 'signup'
+                ? 'text-gray-800 border-orange-500'
+                : 'text-gray-500 border-transparent hover:text-orange-500 hover:border-orange-500 transition'
+            }`}
+          >
+            Signup
+          </button>
+              </div>
+            );
+          })()}
+
+        <h2 className="text-3xl font-bold text-gray-800 ">Login to Culture Ai</h2>
+        <p className="text-gray-600 mb-3">Ask any question about any tribe in Kenya</p>
+          <form onSubmit={handleLogin} className="space-y-4">
+            <label >Email</label>
+            <input
+              type="email"
+              placeholder="Enter your Email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            <label >Password</label>
+            <input
+              type="password"
+              placeholder="Enter yourPassword"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+
+            <div className="flex justify-center">
+              <input
+              type="submit"
+              className="w-auto bg-orange-500 text-white py-2 px-8 rounded-md hover:bg-orange-400 transition duration-200"
+              />
+            </div>
+
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

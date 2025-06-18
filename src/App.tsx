@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import SearchPage from "@/pages/SearchPage.tsx";
 import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 function App() {
   return (
     <BrowserRouter>

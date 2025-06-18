@@ -16,10 +16,10 @@ export default function SearchPage() {
   ];
 
   return (
-    <div className="p-6 bg-black text-white min-h-screen">
+    <div className="p-6 bg-white text-black min-h-screen">
       <button
       onClick={() => window.history.back()}
-      className="mb-4 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-700"
+      className="mb-4 bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700"
       >
       Back
       </button>
@@ -34,7 +34,7 @@ export default function SearchPage() {
           placeholder={`Search about ${tribe} ${activeTab}...`}
           className="flex-grow px-4 py-2 text-gray-700 focus:outline-none"
         />
-        <button className="bg-green-600 text-white px-6 py-2 hover:bg-green-700">
+        <button className="bg-orange-500 text-white px-6 py-2 hover:bg-green-700">
           Search
         </button>
       </div>
@@ -42,28 +42,28 @@ export default function SearchPage() {
 
       {/* Tabs Navigation */}
       <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mb-6">
-  {tabs.map((tab) => (
-    <div
+      {tabs.map((tab) => (
+        <div
       key={tab.id}
       onClick={() => setActiveTab(tab.id)}
       className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
         activeTab === tab.id
-          ? "bg-green-600 text-white shadow-lg"
-          : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"
+          ? "bg-orange-600 text-white shadow-lg"
+          : "bg-orange-300 text-gray-800 hover:bg-orange-600 hover:text-black"
       }`}
-    >
+        >
       <h3 className="text-lg font-bold mb-2">{tab.label}</h3>
       <p className="text-sm">
         {tab.content.substring(0, 50)}... {/* Short preview of the content */}
       </p>
+        </div>
+      ))}
     </div>
-  ))}
-</div>
 
      
 
       {/* Tab Content */}
-      <div className="text-lg">
+      <div className="text-lg ">
         {tabs.find((tab) => tab.id === activeTab)?.content}
       </div>
     </div>
